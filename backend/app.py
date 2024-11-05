@@ -8,8 +8,10 @@ from sentence_transformers import SentenceTransformer
 from transformers import pipeline
 from config import REDIS_HOST, REDIS_PORT, REDIS_DB
 import redis
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # Enables CORS for all routes
 
 # Initialize Redis client
 redis_client = redis.StrictRedis(host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DB)

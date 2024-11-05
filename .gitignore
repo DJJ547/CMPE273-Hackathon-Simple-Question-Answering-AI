@@ -1,0 +1,182 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Flask & Python specific
+instance/
+*.sqlite3
+*.db
+*.pkl
+
+# Flask migrations
+migrations/
+
+# dotenv environment variables file
+.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# VS Code settings
+.vscode/
+
+# PyCharm
+.idea/
+
+# macOS files
+.DS_Store
+
+# Logs and runtime files
+logs/
+*.log
+*.pot
+*.pyc
+*.pyo
+coverage/
+*.cover
+*.coverage.*
+.cache/
+.scrapy/
+
+# Testing output
+htmlcov/
+.tox/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+
+# Documentation
+docs/_build/
+
+# MyPy
+.mypy_cache/
+
+# Environments
+local.env
+docker-compose.override.yml
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Flask specific
+instance/
+*.sqlite3
+*.db
+*.pkl
+
+# Flask migrations
+migrations/
+
+# dotenv environment variables file
+.env
+
+# React specific
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp/
+.pnp.js
+
+# Production build
+/build
+
+# Miscellaneous
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Log files
+logs/
+*.log
+
+# Testing
+coverage/
+*.lcov
+
+# VS Code settings
+.vscode/
+
+# PyCharm
+.idea/
+
+# macOS files
+.DS_Store
+
+# Logs and runtime files
+*.pot
+*.pyc
+*.pyo
+.cover
+.coverage.*
+.cache/
+.scrapy/
+
+# Testing output
+htmlcov/
+.tox/
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+
+# Documentation
+docs/_build/
+
+# MyPy
+.mypy_cache/
+
+# Environments
+local.env
+docker-compose.override.yml
+
+# Storybook files
+storybook-static/
+
+# ESLint cache
+.eslintcache
+
+# Parcel-bundler cache (if applicable)
+.cache/
+
+# SASS cache
+.sass-cache/
+
+# Jest snapshot testing
+*.snap

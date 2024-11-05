@@ -74,6 +74,7 @@ def load_data(file_path):
 @app.route('/search', methods=['GET'])
 def index():
     query_params = request.args.get('message')
+    print(query_params)
     result = pipeline1(query_params, document_sections=document_sections, index=index)
     return jsonify({'message': result})
 

@@ -43,12 +43,14 @@ const ChatComponent = () => {
     setIsTyping(true);
 
     try {
-      const response = await axios.post("/api/response", {
-        message: inputValue,
+      const response = await axios.get("/search", {
+        params: {
+          message: inputValue,
+        },
       });
 
       const botMessage = {
-        message: response.data.response,
+        message: response.data.message,
         sentTime: new Date().toLocaleTimeString(),
         sender: "Bot",
         avatar: "/Bot.png",

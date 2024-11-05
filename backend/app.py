@@ -17,6 +17,7 @@ CORS(app)  # Enables CORS for all routes
 redis_client = redis.StrictRedis(host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DB)
 model = SentenceTransformer('all-MiniLM-L6-v2')
 qa_pipeline = pipeline("question-answering", model="distilbert-base-cased-distilled-squad")
+beautify_model = pipeline("text-generation", model="gpt2", max_length=50, pad_token_id=50256)
 
 # Define global variables
 document_sections = None
@@ -27,12 +28,20 @@ def search(query, k=3, document_sections=None, index=None):
     _, indices = index.search(query_embedding, k)
     return [document_sections[idx] for idx in indices[0]]
 
+def beautify_text(text):
+    # Generate a slightly refined version of the text using GPT-2
+    response = beautify_model(text, num_return_sequences=1, do_sample=False)[0]['generated_text']
+    # Only keep the generated output up to the original text length to avoid excessive rephrasing
+    return response[:len(text)]
+
 def pipeline1(query, k=3, document_sections=None, index=None):
     answers = []
     for section in search(query, k, document_sections, index):
         result = qa_pipeline(question=query, context=section)
-        answers.append(result['answer'])
-    return ''.join(answers)
+        answer = result['answer']
+        beautified_answer = beautify_text(answer)  # Slightly beautify each answer
+        answers.append(beautified_answer)
+    return ' '.join(answers)
 
 def extract_text_from_pdf(pdf_path):
     with pdfplumber.open(pdf_path) as pdf:

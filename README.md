@@ -11,7 +11,10 @@ A sophisticated Retrieval-Augmented Generation (RAG) system that provides intell
 - **Redis Caching**: Efficient storage and retrieval of embeddings and document data
 - **Text Beautification**: GPT-2 powered text refinement for better readability
 
-## 🏗️ Architecture
+## 🏗️ System Architecture
+
+![System Architecture](./readme/architecture.png)  
+*High-level system architecture showing core components and data flow.*
 
 This project implements a sophisticated RAG (Retrieval-Augmented Generation) pipeline:
 
